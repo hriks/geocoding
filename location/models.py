@@ -23,7 +23,8 @@ class GeoLocation(models.Model):
 
     def get_coordinates(self, address):
         import requests
-        endpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s' % (address, api_key) # noqa
+        from geocoding.settings import GMAPS_API_KEY
+        endpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s' % (address, GMAPS_API_KEY) # noqa
         r = requests.get(endpoint).json()
         return r['results'][0]['geometry']['location']
 
