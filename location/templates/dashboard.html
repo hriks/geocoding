@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geo Locator</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="/static/csrf.js"></script>
+	<script type="text/javascript" src="/static/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/style.css" />
+	<script type="text/javascript">
+	</script>
+</head>
+<body>
+	<div class="col-sm-12 header">
+		<h3><i class="fa fa-globe"></i> Geolocator</h3>
+	</div>
+	<div class="col-sm-12 form-container">
+			<!--<div class="loader"></div>
+			<br>
+			<p style="color: #005db1">Please wait while we take you to payment page....</p>
+		</center>-->
+		<form autocomplete="off" id="geofile_form" name="geofile_form" accept-charset="utf-8" method="post" action="/upload/geofile" target="_self" onsubmit="return uploadGeoFile();">
+			<center><div id="geofile_error"></div></center>
+			<div class="input-group">
+				<input type="file" name="geofile" id="geofile" required="required">
+			</div>
+			<div class="input-group">
+				<button type="submit" name="submit_geofile_form" id="submit_geofile_form" class="btn btn-default"> <i class="ace-icon fa fa-upload"></i> Upload </button>
+			</div>
+		</form>
+	</div>
+	<div class="modal">
+		<center>
+			<div id="myProgress">
+  				<div id="myBar">1%</div>
+  				<div id="progress-text"></div>
+			</div>
+		</center>
+	</div>
+	<div class="col-sm-12 result-container">
+		<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Lat</th>
+                    <th>Lng</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <p><a href="" id="coorindates">Download file <i class="fa fa-download"></i></a></p>
+	</div>
+</body>
+</html>
