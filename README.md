@@ -61,3 +61,7 @@ Run app by
 ```
 python manage.py runserver
 ```
+
+Sample excel file
+
+![](https://github.com/hriks/geocoding/blob/master/media/Sample.png)
