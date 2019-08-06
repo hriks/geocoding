@@ -10,7 +10,7 @@ with the usual python module setup, or like a docker user.
 
 Ensure that you have an updated version of pip
 
-```
+```bash
 pip --version
 ```
 Should atleast be 1.5.4
